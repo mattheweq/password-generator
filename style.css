@@ -17,7 +17,7 @@ button{
   margin: 55px 0 20px;
   height: 55px;
   line-height: 55px;
-  font-size: 7vw;
+  font-size: 24px;
   background: #fefd00;
   color: #111;
 }
@@ -47,4 +47,11 @@ p {
   right: 5px;
   color: #f7f7f7;
   font-size: 24px;
+}
+
+@media (min-width: 768px){
+  #root {
+    line-height: 55px;
+    font-size: 48px;
+  }
 }
