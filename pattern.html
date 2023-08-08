@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel='shortcut icon' href='https://easycss.github.io/favicon/favicon.png' type='image/x-icon' />
+<link rel='stylesheet' href='https://easycss.github.io/easyform/buttons.css'>
+<style>
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  overflow: hidden;
+  font-size: 36px;
+  line-height: .5;
+  text-align: left;
+  font-family: monospace;
+}
+
+/* center button on page */
+.container{
+  display: flex;
+  height: calc(100vh - 100px);
+  justify-content: center;
+  align-items: center;
+}
+.btn {
+  position: relative;
+  z-index: 2;
+  background: yellow;
+  color: black;
+  padding: 20px;
+}
+</style>
+<title>Document</title>
+</head>
+<body>
+<div class="container">
+  <button class="btn" id="increaseBtn">+</button>
+  <button class="btn" id="btn">Generate Repeating Text</button>
+  <button class="btn"id="decreaseBtn">-</button>
+</div>
+
+<div id="overlay"></div>
+
+<script>
+const increaseBtn = document.getElementById('increaseBtn');
+const decreaseBtn = document.getElementById('decreaseBtn');
+const btn = document.getElementById('btn');
+const overlay = document.getElementById('overlay');
+
+let lineheight = 1;
+let lineheightStep = 1;
+
+btn.addEventListener('click', () => {
+  const randomValue = generateRandom(100000);
+  /* const cleanValue = randomValue.replace(/[\s\n]+/g, ''); // Remove whitespace and line breaks
+  const joinedValue = cleanValue.split('').join(''); // Join the characters together */
+  overlay.textContent = randomValue;
+  overlay.style.display = 'block';
+  overlay.style.zIndex = 1;
+  overlay.style.position = "absolute";
+  overlay.style.top = 0;
+  overlay.style.bottom = 0;
+  overlay.style.left = 0;
+  overlay.style.right = 0;
+});
+
+increaseBtn.addEventListener('click', () => {
+   if (lineheight === 1) {
+    if (lineheightStep < 2) {
+      lineheightStep += 0.1;
+    }
+  } else {
+    lineheight += 0.1;
+    lineheightStep = 0.1;
+  }
+    lineheight = Math.min(2, lineheight); // Ensure it doesn't exceed 1
+    document.body.style.lineHeight = lineheight * lineheightStep;
+});
+
+decreaseBtn.addEventListener('click', () => {
+  if (lineheight > 0.1) {
+    lineheight -= 0.1;
+    lineheight = Math.max(0.1, lineheight); // Ensure it doesn't go below 0.1
+    document.body.style.lineHeight = lineheight;
+  }
+});
+
+function generateRandom(length) {
+  const characters = '@u -s E> %r <n !a .M #e +M @a T) _t $h /e (w';
+  let result = '';
+
+  for (let i = 0; i < length; i++) {
+    const randomIndex = Math.floor(Math.random() * characters.length);
+    result += characters[randomIndex];
+  }
+
+  return result;
+}
+
+
+</script>
+</body>
+</html>

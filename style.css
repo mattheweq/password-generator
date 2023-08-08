@@ -1,0 +1,50 @@
+body{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #000;
+}
+button{
+  width: fit-content;
+  margin-top: 100px;
+  background: green;
+  /* color: white!important; */
+  animation: anim1 5s infinite;
+  border: 1px solid #00ff00!important;
+}
+#root {
+  margin: 55px 0 20px;
+  height: 55px;
+  line-height: 55px;
+  font-size: 7vw;
+  background: #fefd00;
+  color: #111;
+}
+p {
+  margin-top: 28px;
+  color: #ccc;
+  font-size: 14px;
+}
+.copy-msg{
+  color: green;
+  font-size: 14px;
+}
+@keyframes anim1 {
+  0% {
+    background: #00ff0011;
+  }
+  50% {
+    background: #00ff0055;
+  }
+  100% {
+    background: #00ff0011;
+  }
+}
+.pattern{
+  position: absolute;
+  bottom: 0;
+  right: 5px;
+  color: #f7f7f7;
+  font-size: 24px;
+}
