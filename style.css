@@ -9,7 +9,6 @@ button{
   width: fit-content;
   margin-top: 100px;
   background: green;
-  /* color: white!important; */
   animation: anim1 5s infinite;
   border: 1px solid #00ff00!important;
 }
