@@ -6,6 +6,8 @@
 - Use for passwords, etc.
 - Random strings are not stored on a server.
 
+[LIVE SITE](https://mattheweq.com/password-generator/)
+
 ![preview](/preview1.png)
 ![preview](/preview2.png)
 ![preview](/preview3.png)
